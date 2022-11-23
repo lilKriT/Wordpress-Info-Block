@@ -1,0 +1,23 @@
+{
+  "name": "quiz-block",
+  "version": "1.0.0",
+  "description": "A simple quiz Gutenberg plugin. Made following a tutorial from Udemy.\r Created by lilKriT.",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lilKriT/Wordpress-Quiz-Block.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lilKriT/Wordpress-Quiz-Block/issues"
+  },
+  "homepage": "https://github.com/lilKriT/Wordpress-Quiz-Block#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^24.6.0"
+  }
+}
