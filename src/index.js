@@ -4,7 +4,7 @@ wp.blocks.registerBlockType("quizplugin/quizblock", {
   icon: "smiley",
   category: "common",
   edit: function () {
-    return wp.element.createElement("h3", null, "This is a plugin - EDIT"); // type of element, attributes or classes, content or children
+    return <h3>This is h3 from JSX.</h3>;
   },
   save: function () {
     return wp.element.createElement("h1", null, "This is the frontend");
@@ -15,3 +15,5 @@ wp.blocks.registerBlockType("quizplugin/quizblock", {
 // install node
 // npm init
 // npm i @wordpress/scripts -D
+// Add build commands
+// npm run start
