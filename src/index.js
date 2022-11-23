@@ -5,9 +5,12 @@ wp.blocks.registerBlockType("quizplugin/quizblock", {
   category: "common",
   //   This is to connect edit and save
   //   By default, they are stored in html comments.
+  //   Source and selector let it be stored in the text itself.
   attributes: {
     skyColor: { type: "string" },
     grassColor: { type: "string" },
+    // skyColor: { type: "string", source: "text", selector: ".skyColor" },
+    // grassColor: { type: "string", source: "text", selector: ".grassColor" },
   },
   edit: function (props) {
     function updateSkyColor(e) {
@@ -38,8 +41,10 @@ wp.blocks.registerBlockType("quizplugin/quizblock", {
   save: function (props) {
     return (
       <p>
-        Today the sky is {props.attributes.skyColor} and grass is{" "}
-        {props.attributes.grassColor}
+        {/* The class names are mostly used as source, but they can have other purpose */}
+        Today the sky is{" "}
+        <span className="skyColor">{props.attributes.skyColor}</span> and grass
+        is <span className="grassColor">{props.attributes.grassColor}</span>
       </p>
     );
   },
