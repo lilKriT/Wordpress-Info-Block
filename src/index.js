@@ -1,6 +1,6 @@
 // variable name with namespace, config object
-wp.blocks.registerBlockType("quizplugin/quizblock", {
-  title: "Gutenberg Quiz",
+wp.blocks.registerBlockType("infoplugin/infoblock", {
+  title: "Info Block",
   icon: "smiley",
   category: "common",
   //   This is to connect edit and save
@@ -9,8 +9,6 @@ wp.blocks.registerBlockType("quizplugin/quizblock", {
   attributes: {
     skyColor: { type: "string" },
     grassColor: { type: "string" },
-    // skyColor: { type: "string", source: "text", selector: ".skyColor" },
-    // grassColor: { type: "string", source: "text", selector: ".grassColor" },
   },
   edit: function (props) {
     function updateSkyColor(e) {
@@ -38,36 +36,10 @@ wp.blocks.registerBlockType("quizplugin/quizblock", {
       </div>
     );
   },
-  //   The class names are mostly used as source, but they can have other purpose
-  //   Also this isn't the best way to do it, since it will require a save and reload every time you change the code.
-  save: function (props) {
-    return (
-      <h3>
-        Today the sky is very{" "}
-        <span className="skyColor">{props.attributes.skyColor}</span> and grass
-        is <span className="grassColor">{props.attributes.grassColor}</span>
-      </h3>
-    );
+  //   The new way - this will use PHP, and won't require update whenever you change the way it's displayed.
+  save: function () {
+    return null;
   },
-  //   This is so there won't be issues when updating "save"
-  deprecated: [
-    {
-      attributes: {
-        skyColor: { type: "string" },
-        grassColor: { type: "string" },
-      },
-      save: function (props) {
-        return (
-          <p>
-            Today the sky is{" "}
-            <span className="skyColor">{props.attributes.skyColor}</span> and
-            grass is{" "}
-            <span className="grassColor">{props.attributes.grassColor}</span>
-          </p>
-        );
-      },
-    },
-  ],
 });
 
 // How to get jsx to work?

@@ -1,5 +1,5 @@
 {
-  "name": "quiz-block",
+  "name": "info-block",
   "version": "1.0.0",
   "description": "A simple quiz Gutenberg plugin. Made following a tutorial from Udemy.\r Created by lilKriT.",
   "main": "test.js",
