@@ -3,11 +3,45 @@ wp.blocks.registerBlockType("quizplugin/quizblock", {
   title: "Gutenberg Quiz",
   icon: "smiley",
   category: "common",
-  edit: function () {
-    return <h3>This is h3 from JSX.</h3>;
+  //   This is to connect edit and save
+  //   By default, they are stored in html comments.
+  attributes: {
+    skyColor: { type: "string" },
+    grassColor: { type: "string" },
   },
-  save: function () {
-    return wp.element.createElement("h1", null, "This is the frontend");
+  edit: function (props) {
+    function updateSkyColor(e) {
+      props.setAttributes({ skyColor: e.target.value });
+    }
+
+    function updateGrassColor(e) {
+      props.setAttributes({ grassColor: e.target.value });
+    }
+
+    return (
+      <div>
+        <input
+          type="text"
+          placeholder="Sky Color"
+          onChange={updateSkyColor}
+          value={props.attributes.skyColor}
+        />
+        <input
+          type="text"
+          placeholder="Grass Color"
+          onChange={updateGrassColor}
+          value={props.attributes.grassColor}
+        />
+      </div>
+    );
+  },
+  save: function (props) {
+    return (
+      <p>
+        Today the sky is {props.attributes.skyColor} and grass is{" "}
+        {props.attributes.grassColor}
+      </p>
+    );
   },
 });
 
