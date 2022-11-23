@@ -19,7 +19,9 @@ class QuizBlock
 
     function adminAssets()
     {
-        wp_enqueue_script("quizBlockType", plugin_dir_url(__FILE__) . "test.js", array('wp-blocks'));    // name we came up with, file url, dependencies
+        // name we came up with, file url, dependencies
+        wp_enqueue_script("quizBlockType", plugin_dir_url(__FILE__) . "test.js", array('wp-blocks', "wp-element")); // wp-element isn't really necessary to specify
+
     }
 }
 
