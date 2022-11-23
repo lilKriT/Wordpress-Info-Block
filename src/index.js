@@ -38,16 +38,36 @@ wp.blocks.registerBlockType("quizplugin/quizblock", {
       </div>
     );
   },
+  //   The class names are mostly used as source, but they can have other purpose
+  //   Also this isn't the best way to do it, since it will require a save and reload every time you change the code.
   save: function (props) {
     return (
-      <p>
-        {/* The class names are mostly used as source, but they can have other purpose */}
-        Today the sky is{" "}
+      <h3>
+        Today the sky is very{" "}
         <span className="skyColor">{props.attributes.skyColor}</span> and grass
         is <span className="grassColor">{props.attributes.grassColor}</span>
-      </p>
+      </h3>
     );
   },
+  //   This is so there won't be issues when updating "save"
+  deprecated: [
+    {
+      attributes: {
+        skyColor: { type: "string" },
+        grassColor: { type: "string" },
+      },
+      save: function (props) {
+        return (
+          <p>
+            Today the sky is{" "}
+            <span className="skyColor">{props.attributes.skyColor}</span> and
+            grass is{" "}
+            <span className="grassColor">{props.attributes.grassColor}</span>
+          </p>
+        );
+      },
+    },
+  ],
 });
 
 // How to get jsx to work?
