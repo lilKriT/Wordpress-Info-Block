@@ -1,4 +1,4 @@
-# WordPress Quiz Block
+# WordPress Info Block
 
-A simple quiz Gutenberg plugin. Made following a tutorial from Udemy.
+A simple Info Gutenberg plugin. Made following a tutorial from Udemy.
 Created by lilKriT.
